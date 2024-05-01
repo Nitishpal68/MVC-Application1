@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MVC_Application1.Models.TimeSheet>
+
+@{
+    ViewData["Title"] = "Show";
+}
+
+<h1>Show</h1>
+
+<p>
+    <a asp-action="Index">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeSheetID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.employeeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoursOfWork)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.projectID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.taskID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeSheetID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoursOfWork)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.projectID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.taskID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkStatus)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "getData", new {  id=item.TimeSheetID/* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "DeleteData", new {  id=item.TimeSheetID/* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
